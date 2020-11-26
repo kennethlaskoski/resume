@@ -74,18 +74,18 @@
 		\hspace{1.5em} #2 \par}    % Entry value	
 		
 \newcommand{\EducationEntry}[4]{
-		\noindent \textbf{#1} \hfill      % Study
-		\colorbox{Black}{%
-			\parbox{6em}{%
-			\hfill\color{White}#2}} \par  % Duration
-		\noindent \textit{#3} \par        % School
+		\noindent \textbf{#1} \hfill      % School
+        #2 \par
+%		\fbox{#2} \par                    % Duration
+		\noindent \textit{#3} \par        % Study
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
 \newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
-		\noindent \textbf{#1} \hfill      % Jobname
-		\colorbox{Black}{\color{White}#2} \par  % Duration
-		\noindent \textit{#3} \par              % Company
+		\noindent \textbf{#1} \hfill      % Company
+        #2 \par
+%		\fbox{#2} \par                    % Duration
+		\noindent \textit{#3} \par        % Jobname
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
@@ -98,52 +98,84 @@
 %		\includegraphics[width=0.15\textwidth]{photo}
 %\end{wrapfigure}
 
-\MyName{Your Name}
-\MySlogan{Curriculum Vitae}
+\MyName{Kenneth Laskoski}
+%\MySlogan{Curriculum Vitae}
 
 \sepspace
 
 %%% Personal details
 %%% ------------------------------------------------------------
-\NewPart{Personal details}{}
+\NewPart{Contato}{}
 
-\PersonalEntry{Birth}{January 1, 1980}
-\PersonalEntry{Address}{111 First St, New York}
-\PersonalEntry{Phone}{(123) 000-0000}
-\PersonalEntry{Mail}{\url{me@home.com}}
+%\PersonalEntry{Birth}{6 de outubro de 1974}
+\PersonalEntry{Endereço}{Rua Felipe de Oliveira, 566/404 - Petrópolis - Porto Alegre RS}
+\PersonalEntry{Telefone}{(51) 99428-4677}
+\PersonalEntry{Email}{\url{kennethlaskoski@gmail.com}}
 
 %%% Education
 %%% ------------------------------------------------------------
-\NewPart{Education}{}
+\NewPart{Formação}{}
 
-\EducationEntry{MSc. Name of Education}{2010-2012}{Name of
-  University}{Descriptive text goes here. In order to maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in the education section.}
+\EducationEntry{Universidade Federal do Rio Grande do Sul}{março 2016 - presente}{Bacharelado em Física}{Graduação em andamento.}
 \sepspace
-
-\EducationEntry{BSc. Name of Education}{2007-2010}{Name of University}{Descriptive text goes here. In order to maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in the education section.}
 
 %%% Work experience
 %%% ------------------------------------------------------------
-\NewPart{Work experience}{}
+\NewPart{Experiência Profissional}{}
 
-\EducationEntry{Job name}{2011-present}{Company Name inc., Full-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
+\WorkEntry{Nelogica Sistemas de Software}{novembro 2018 - outubro 2020}{Desenvolvedor Sênior}{Desenvolvimento de app iOS para negociação de títulos na Bolsa de Valores. Criação de plataforma de transmissão de dados binários, entre os servidores e os dispositivos móveis, obedecendo parâmetros rígidos de velocidade e confiabilidade. Participação na implementação de apresentação gráfica dos dados, permitindo a negociação diretamente na tela de gráficos. Integração do desenvolvimento e publicação do app utilizando ferramentas e metodologias atuais, como GitLab, Jira e Carthage.}
+\sepspace
 \sepspace
 
-\EducationEntry{Job name}{2010-2011}{Company Name inc., Part-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
+\WorkEntry{RZ2 Sistemas de Gestão}{abril 2017 - novembro 2018}{Desenvolvedor Sênior}{Desenvolvimento de aplicativos para iPhone e iPad com uso da linguagem Swift. O app desenvolvido implementa um sistema de questionário customizável que pode ser utilizado em diversos cenários, destacando-se controle de estoque, auxílio a logística e otimização de tarefas. A lista de clientes atendidos inclui Lojas Marisa, Camisaria Colombo, Toyota, Nissan, Renault, Pizza Hut, KFC, Habib’s, Petróleo Ipiranga.}
+\sepspace
+\sepspace
+
+\WorkEntry{Lexsis Sistemas}{março 2016 - abril 2017}{Desenvolvedor Sênior}{Desenvolvimento de aplicativos para smartphones e tablets Android e iOS nas linguagens Java e Swift, respectivamente. Os aplicativos são voltados ao ramo de restaurantes.}
+\sepspace
+\sepspace
+
+\WorkEntry{It’s Mobile Tecnologia e Inovação}{maio 2013 - março 2016}{Desenvolvedor}{Desenvolvimento de aplicativos para tablets iOS em Objective-C, com foco a automação da força de vendas de forma integrada com sistemas SAP, para clientes como Bettanin, Pado, Randon, Dudalina, entre outros.}
+
+\newpage
+
+\WorkEntry{ITM Consultoria e Negócios - Intermídia}{julho 2012 - maio 2013}{Desenvolvedor}{Desenvolvimento de aplicativos para dispositivos móveis, em particular Apple iPad, com foco na automação da força de vendas da indústria calçadista (Arezzo, Crysalis, Pegada, Piccadilly) utilizando, principalmente, Objective-C e SQLite.}
+\sepspace
+\sepspace
+
+\WorkEntry{DBKi Informática}{setembro 2011 – julho 2012}{Desenvolvedor}{Desenvolvimento e manutenção de webservices integrantes do sistema de e-commerce das Lojas Renner, utilizando as tecnologias .NET (C\texttt{\#}). Desenvolvimento de aplicativos para sistemas iOS (iPhone e iPad), tendo como cliente as Lojas Renner, entre outros, com a utilização da linguagem Objective-C na plataforma Apple.}
+\sepspace
+\sepspace
+
+\WorkEntry{T\&T Engenheiros Associados}{setembro 2009 – setembro 2011}{Desenvolvedor}{Desenvolvimento e manutenção da Conformance Test Suite responsável pelo teste de homologação de sistemas candidatos à certificação DASH (Desktop and mobile Architecture for System Hardware), segundo standard definido e publicado pela DMTF (Distributed Management Task Force), consórcio do qual são membros: HP, Intel, Microsoft, Dell; entre outros. A suite DASH CTS é composta de programas escritos em Java e C\texttt{++}, além de scripts de linha de comando.}
+\sepspace
+\sepspace
+
+\WorkEntry{DBServer Assessoria em Sistemas de Informação}{novembro 2005 – novembro 2008}{Desenvolvedor}{Participação em projeto da Tlantic SI, empresa integrante do grupo Sonae, objetivando o desenvolvimento de sistema de automação instalado nas lojas do grupo em Portugal e outros países. Emprego de C\texttt{++}, XML, webservices, patterns, UML, nos sistemas operacionais Linux e Windows.}
+\sepspace
+\sepspace
+
+\WorkEntry{CWI Informática}{fevereiro 2002 – abril 2005}{Desenvolvedor}{Integrante da equipe de manutenção de sistema responsável por gerenciar informações no cliente Agrofel, incluindo controle de vendas e financiamentos. Software escrito basicamente em C e implantado na plataforma HP9000.}
+\sepspace
+\sepspace
+
+\WorkEntry{Departamento de Engenharia Química - UFRGS}{março 1998 – fevereiro 2000}{Bolsista de Apoio Técnico}{Desenvolvedor em projeto de sofware, patrocinado por Petrobras e Braskem, especializado na supervisão e avaliação de sistemas de controle da indústria química/petroquímica. Programação em C\texttt{++} utilizando o framework Qt para implementar GUI multiplataforma Windows/Linux.}
+\sepspace
+\sepspace
+
+\WorkEntry{Lógica Informática}{abril 1990 – novembro 1991}{Programador}{Programação em Clipper de sistemas destinados a pequenas e médias empresas, tais como Folha de Pagamento, Contabilidade, Contas a Pagar/Receber.}
 
 %%% Skills
 %%% ------------------------------------------------------------
-\NewPart{Skills}{}
+\NewPart{Habilidades}{}
 
-\SkillsEntry{Languages}{Dutch (mother tongue)}
-\SkillsEntry{}{English (fluent)}
-\SkillsEntry{}{German (fluent)}
+\SkillsEntry{Línguas}{Inglês fluente}
 
-\SkillsEntry{Software}{\textsc{Matlab}, \LaTeX, \textsc{Ansys}, \textsc{Comsol}}
+\SkillsEntry{Software}{iOS, Swift, Scrum, DevOps, C/C\texttt{++}, \LaTeX}
 
 
 %%% References
 %%% ------------------------------------------------------------
-\NewPart{References}{}
-Available upon request
+%%\NewPart{References}{}
+%%Available upon request
 \end{document}
