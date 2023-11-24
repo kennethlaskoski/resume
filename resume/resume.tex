@@ -1,0 +1,224 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % School
+        #2 \par
+%		\fbox{#2} \par                    % Duration
+		\noindent \textit{#3} \par        % Study
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Company
+        #2 \par
+%		\fbox{#2} \par                    % Duration
+		\noindent \textit{#3} \par        % Jobname
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Kenneth Laskoski}
+%\MySlogan{Curriculum Vitae}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Contact}{}
+
+%\PersonalEntry{Birth}{6 de outubro de 1974}
+\PersonalEntry{Address}{Rua Felipe de Oliveira, 566/404 - Porto Alegre, RS, Brazil}
+\PersonalEntry{Phone}{(51) 99428-4677}
+\PersonalEntry{Email}{\url{kennethlaskoski@gmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{Universidade Federal do Rio Grande do Sul}{march 2015 - present}{Physics}{}
+\sepspace
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work Experience}{}
+
+\WorkEntry
+  {Storm Group - Security and Defense}
+  {July 2022 - October 2023}
+  {Senior iOS Developer}
+  {Development of video player framework for Globo TV iOS apps. Participation in the decision process regarding architecture, design and implementation derails. Technical leadership and mentoring of junior developers.}
+
+\sepspace
+\sepspace
+
+\WorkEntry
+  {everis}
+  {August 2021 - June 2022}
+  {Senior iOS Developer}
+  {Development and maintenance of Itaucard iOS apps for credit card account management. Implementation of UI and business domain components for in-app chat assistance. Mentoring of junior developers.}
+
+\sepspace
+\sepspace
+
+\WorkEntry
+  {DevGrid Ltd}
+  {April 2021 - June 2021}
+  {Senior iOS Developer}
+  {Research and development of an app for capturing 360º panoramas and objects, aiming to allow the creation by common users of scenarios and models for the composition of immersive three-dimensional virtual tours. Implemented in Swift language, SwiftUI interface and MVVM architecture, established and proven tools were used, such as git, jira, fastlane, bitrise and testflight, enabling continued development and integration.}
+
+%  {Pesquisa e desenvolvimento de app para captura em 360º de panoramas e objetos, visando permitir a criação, por usuários comuns, de cenários e modelos para a composição de passeios virtuais tridimensionais imersivos. O cliente acredita que colocar conceitos avançados, como realidade virtual, realidade aumentada, machine learning, computer vision e modelagem 3D, ao alcance de pessoas sem treinamento ou formação específica, abrirá um leque de possibilidades com o potencial de revolucionar o atual cenário tecnológico, cultural e científico. No aspecto prático do projeto, implementado em linguagem swift, interface swiftUI e arquitetura MVVM, foram utilizadas ferramentas estabelecidas e provadas, como git, jira, fastlane, bitrise e testflight, possibilitando desenvolvimento e integração continuados.}
+
+\sepspace
+\sepspace
+
+\WorkEntry
+  {Nelogica Sistemas de Software}
+  {November 2018 - October 2020}
+  {Senior iOS Developer}
+  {Development of an iOS app for trading securities on the Stock Exchange. Creation of a binary data transmission platform between servers and mobile devices, complying with strict speed and reliability parameters. Participation in the implementation of graphical presentation of data, allowing trading directly on the graphics screen. Integration of app development and publication using current tools and methodologies, such as GitLab, Jira and Carthage.}
+
+%  {Desenvolvimento de app iOS para negociação de títulos na Bolsa de Valores. Criação de plataforma de transmissão de dados binários, entre os servidores e os dispositivos móveis, obedecendo parâmetros rígidos de velocidade e confiabilidade. Participação na implementação de apresentação gráfica dos dados, permitindo a negociação diretamente na tela de gráficos. Integração do desenvolvimento e publicação do app utilizando ferramentas e metodologias atuais, como GitLab, Jira e Carthage.}
+
+%\sepspace
+%\sepspace
+\newpage
+
+\WorkEntry
+  {RZ2 Sistemas de Gestão}
+  {April 2017 - November 2018}
+  {Senior iOS Developer}
+  {Development of applications for iPhone and iPad using the Swift language. The app developed implements a customizable questionnaire system that can be used in different scenarios, including stock control, logistics assistance and task optimization. The list of customers served includes Lojas Marisa, Camisaria Colombo, Toyota, Nissan, Renault, Pizza Hut, KFC, Habib’s, Petróleo Ipiranga.}
+
+%  {Desenvolvimento de aplicativos para iPhone e iPad com uso da linguagem Swift. O app desenvolvido implementa um sistema de questionário customizável que pode ser utilizado em diversos cenários, destacando-se controle de estoque, auxílio a logística e otimização de tarefas. A lista de clientes atendidos inclui Lojas Marisa, Camisaria Colombo, Toyota, Nissan, Renault, Pizza Hut, KFC, Habib’s, Petróleo Ipiranga.}
+
+\sepspace
+\sepspace
+
+\WorkEntry
+  {Lexsis Sistemas}
+  {March 2016 - April 2017}
+  {Senior iOS Developer}
+  {Development of applications for Android and iOS smartphones and tablets in Java and Swift languages, respectively. The applications are aimed at the restaurant industry.}
+
+%  {Desenvolvimento de aplicativos para smartphones e tablets Android e iOS nas linguagens Java e Swift, respectivamente. Os aplicativos são voltados ao ramo de restaurantes.}
+
+\sepspace
+\sepspace
+
+\WorkEntry
+  {It’s Mobile Tecnologia e Inovação}
+  {May 2013 - March 2016}
+  {Desenvolvedor}
+  {Development of applications for iOS tablets in Objective-C, focusing on automating the sales force in an integrated manner with SAP systems, for clients such as Bettanin, Pado, Randon, Dudalina, among others.}
+
+%  {Desenvolvimento de aplicativos para tablets iOS em Objective-C, com foco a automação da força de vendas de forma integrada com sistemas SAP, para clientes como Bettanin, Pado, Randon, Dudalina, entre outros.}
+
+\sepspace
+\sepspace
+
+%\newpage
+
+\WorkEntry
+  {ITM Consultoria e Negócios - Intermídia}
+  {July 2012 - May 2013}
+  {Desenvolvedor}
+  {Development of applications for mobile devices, in particular Apple iPad, with a focus on automating the footwear industry's sales force (Arezzo, Crysalis, Pegada, Piccadilly) using, mainly, Objective-C and SQLite.}
+
+%  {Desenvolvimento de aplicativos para dispositivos móveis, em particular Apple iPad, com foco na automação da força de vendas da indústria calçadista (Arezzo, Crysalis, Pegada, Piccadilly) utilizando, principalmente, Objective-C e SQLite.}
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Languages}{Portuguese, English}
+
+\SkillsEntry{Software}{iOS, Swift, SwiftUI, C/C\texttt{++}, Objective-C, git, Jira, \LaTeX}
+
+
+%%% References
+%%% ------------------------------------------------------------
+%%\NewPart{References}{}
+%%Available upon request
+\end{document}
